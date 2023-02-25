@@ -145,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
 
                 FriendlyMessage friendlyMessage = new FriendlyMessage( encrypted, mUsername, null);
                 mMessagesDatabaseReference.push().setValue(friendlyMessage);
-                // Clear input box
                 mMessageEditText.setText("");
             }
         });
@@ -318,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // yaha
+
     private String encrypt(String data, String password_text) throws Exception {
         SecretKeySpec key = generateKey(password_text);
         Cipher c = Cipher.getInstance("AES/ECB/PKCS5Padding");//creating an object
